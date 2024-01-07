@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="script.js" defer></script>
+  <title>Hacking Screen</title>
+</head>
+<body>
+  <div class="hacking-screen">
+    <div class="console" id="console">
+      <p>Loading data...</p>
+    </div>
+  </div>
+  <script>
+    const consoleElement = document.getElementById("console");
+const messages = [
+  "Hacking into mainframe...",
+  "Access granted.",
+  "Decrypting security protocols...",
+  "Firewall breached.",
+  "Downloading sensitive data...",
+  "Data download complete."
+];
+
+function simulateHacking() {
+  let index = 0;
+  function printMessage() {
+    if (index < messages.length) {
+      consoleElement.innerHTML += messages[index] + "<br>";
+      consoleElement.scrollTop = consoleElement.scrollHeight;
+      index++;
+      setTimeout(printMessage, Math.random() * 1000 + 500);
+    }
+  }
+  printMessage();
+}
+
+simulateHacking();
+
+  </script>
+</body>
+</html>
